@@ -12,7 +12,7 @@ this game!
 
 ## Wireframe
 
-(Your wireframes go here. Preferably two or more)
+![Take a Peek](images/takeAPeek.jpg)
 
 ## Initial thoughts on game structure
 
