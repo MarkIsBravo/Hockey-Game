@@ -1,14 +1,21 @@
-# [Name of Game]
+# [Rock-Soc]
 
 [screenshot]
 
-## What is [name of game]?
+## What is [Roc-Soc]?
 
-> Brief discussion of what the game is and why you chose to make it
+> This is a soccer game that two players could fight with each other
+and try to bounce the ball into the rival's goal. Try to win over
+your rival by getting the most scores in the given time. The game 
+should be fun and I chose this game because I'm always interested
+in setting up with the object animations and transitions either on
+the webpage or in the games.
 
 ## Technical Discussion
 
-> List of the technologies you're using (HTML, CSS, JavaScript)
+> HTML
+> CSS
+> Javascript/jQuery
 
 ### Notes on Game Structure
 
