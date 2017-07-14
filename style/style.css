@@ -1,0 +1,165 @@
+.scoreboard{
+  height:50px;
+  width:400px;
+  margin: 0 auto;
+  position:relative;
+  font-size:40px;
+  font-family: 'Permanent Marker', cursive;
+  font-weight:900;
+}
+.score{
+  position:absolute;
+  left:127px;
+}
+.redscore{
+  position:absolute;
+  left:0px;
+  color:red;
+}
+.bluescore{
+  position:absolute;
+  right:0px;
+  color:blue;
+}
+.container{
+  height:700px;
+  width:1000px;
+  border:5px solid black;
+  margin:0 auto;
+  position:relative;
+}
+.midline{
+  height:700px;
+  width:0px;
+  border:2px solid black;
+  position:absolute;
+  left:49%;
+}
+.midcircle{
+  height:300px;
+  width:300px;
+  border:5px solid black;
+  border-radius:50%;
+  position:absolute;
+  left:334px;
+  top:195px;
+}
+.banner{
+  position:absolute;
+  width:990px;
+  left:0px;
+  top:190px;
+  text-align:center;
+  font-size:270px;
+  font-family: 'Luckiest Guy', cursive;
+}
+.player{
+  height:50px;
+  width:50px;
+  border:5px solid black;
+  border-radius:50%;
+  position:absolute;
+}
+#red{
+  left:150px;
+  top:300px;
+  background-color:red;
+}
+#blue{
+  left:780px;
+  top:300px;
+  background-color:blue;
+}
+.goal{
+  height:230px;
+  width:30px;
+  border:5px solid black;
+  position:absolute;
+}
+#redgoal{
+  top:230px;
+  left:0px;
+  background-color:red;
+}
+#bluegoal{
+  top:230px;
+  right:0px;
+  background-color:blue;
+}
+.ball{
+  height:20px;
+  width:20px;
+  border:5px solid black;
+  border-radius:50%;
+  position:absolute;
+  top:320px;
+  left:500px;
+  background-color:grey;
+}
+
+.ballBounceLeft{
+  animation:bounceLeft 2s 1 linear;
+}
+@keyframes bounceLeft{
+  0%{
+    transform:translateX(-50px);
+  }
+  50%{
+    transform:translateX(-500px);
+  }
+  100%{
+    transform:translateX(-400px);
+  }
+}
+.ballBounceRight{
+  animation:bounceRight 2s 1 linear;
+}
+@keyframes bounceRight{
+  0%{
+    transform:translateX(+50px);
+  }
+  50%{
+    transform:translateX(+500px);
+  }
+  100%{
+    transform:translateX(+400px);
+  }
+}
+.ballBounceUp{
+  animation:bounceUp 2s 1 linear;
+}
+@keyframes bounceUp{
+  0%{
+    transform:translateY(-50px);
+  }
+  50%{
+    transform:translateY(-500px);
+  }
+  100%{
+    transform:translateY(-400px);
+  }
+}
+.ballBounceDown{
+  animation:bounceDown 2s 1 linear;
+}
+@keyframes bounceDown{
+  0%{
+    transform:translateY(+50px);
+  }
+  50%{
+    transform:translateY(+500px);
+  }
+  100%{
+    transform:translateY(+400px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
