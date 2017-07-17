@@ -270,21 +270,38 @@ $(document).ready(function(){
   //ball at edge and let the goals detect the balls and add scores to scoreboard
   //accordingly. I worked for a day but still did not figure out why these don't work.
 
-    if($ball.position().left<=30&&$ball.position().top>250&&$ball.position().top<500){
-      $('.bluescore').innerHTML('+=1');
-      setTimeout(startGame,2000);
+  setInterval(function stopMove(){
+    if($ball.offset().left<=50&&$ball.offset().top>250&&$ball.offset().top<500){
+      $('.bluescore').html(parseInt($('.bluescore').html())+1);
+      $ball.removeClass('.ballBounceUp');
+      $ball.removeClass('.ballBounceLeft');
+      $ball.removeClass('.ballBounceDown');
+      $ball.removeClass('.ballBounceRight');
+      $ball.stop();
+      $ball.offset({top:320,left:500});
+      $banner.html('Goal!!!')
       setTimeout(function(){
-        $ball.position({top:320,left:500});
-      },5000)
-    }else if($ball.position().left>=970&&$ball.position().top>250&&$ball.position().top<500){
-      $('.redscore').innerHTML('+=1');
+        $banner.html('');
+      },1000)
       setTimeout(startGame,2000);
+    }else if($ball.offset().left>=1050&&$ball.offset().top>250&&$ball.offset().top<500){
+      $('.redscore').html(parseInt($('.redscore').html())+1);
+      $ball.removeClass('.ballBounceUp');
+      $ball.removeClass('.ballBounceLeft');
+      $ball.removeClass('.ballBounceDown');
+      $ball.removeClass('.ballBounceRight');
+      $ball.stop();
+      $ball.offset({top:320,left:500});
+      $ball.offset({top:320,left:500});
+      $banner.html('Goal!!!')
       setTimeout(function(){
-        $ball.position({top:320,left:500});
-      },5000)
-    }else if($ball.position().top<=10||$ball.position().top>=690||$ball.position().left<=10||$ball.position().left>=990){
-      $ball.css({'animation':'ease-out reverse 2s forwards'});
+        $banner.html('');
+      },1000)
+      setTimeout(startGame,2000);
+    }else if($ball.offset().top<=10||$ball.offset().top>=690||$ball.offset().left<=10||$ball.offset().left>=990){
+      $ball.offset({left:$ball.offset().left,top:$ball.offset().top});
      }
+   },0)
 
 
   //give the ball a reaction that it bounces when touching the edge.
