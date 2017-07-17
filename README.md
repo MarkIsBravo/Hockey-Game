@@ -19,7 +19,8 @@ the webpage or in the games.
 
 ### Notes on Game Structure
 
-> if ([73,76,75,74].includes(e.keyCode)&&!keys.includes(e.keyCode)){
+> This is the wrestling part, when red player touches the blue player carrying the ball.
+     if ([73,76,75,74].includes(e.keyCode)&&!keys.includes(e.keyCode)){
       keys.push(e.keyCode);
 
      }else if(keys.includes(e.keyCode)&&$redBlueDist<=80&&$blueCenterDist<5){
