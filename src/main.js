@@ -38,7 +38,6 @@ $(document).ready(function(){
 
     $(document).keydown(function redMove(e){
 
-    console.log($ball.offset().top)
 
 //declare variables and calculate the center distance and see if there's a collision
       let $redTop=parseInt($redGuy.offset().top);
@@ -102,25 +101,25 @@ $(document).ready(function(){
           $redGuy.addClass('ballBounceRight');
           setTimeout(function(){
             $redGuy.removeClass('ballBounceRight');
-            $redGuy.offset({left:$redLeft+560,top:$redTop});
+            $redGuy.offset({left:$redLeft+600,top:$redTop});
           },2000);
         }else if($blueLeft>=$redLeft&&$blueTop>=$redTop-40&&$blueTop<$redTop+40){
           $redGuy.addClass('ballBounceLeft');
           setTimeout(function(){
             $redGuy.removeClass('ballBounceLeft');
-            $redGuy.offset({left:$redLeft-560,top:$redTop});
+            $redGuy.offset({left:$redLeft-600,top:$redTop});
           },2000);
         }else if($blueTop<$redTop&&$blueLeft>$redLeft-40&&$blueLeft<$redLeft+40){
           $redGuy.addClass('ballBounceDown');
           setTimeout(function(){
             $redGuy.removeClass('ballBounceDown');
-            $redGuy.offset({left:$redLeft,top:$redTop+560});
+            $redGuy.offset({left:$redLeft,top:$redTop+600});
           },2000);
         }else if($blueTop>=$redTop&&$blueLeft>=$redLeft-40&&$blueLeft<=$redLeft+40){
           $redGuy.addClass('ballBounceUp');
           setTimeout(function(){
             $redGuy.removeClass('ballBounceUp');
-            $redGuy.offset({left:$redLeft,top:$redTop-560});
+            $redGuy.offset({left:$redLeft,top:$redTop-600});
           },2000);
 
       }
@@ -147,6 +146,9 @@ $(document).ready(function(){
         $ball.addClass('ballBounceLeft');
       }
     })
+
+
+
     $(document).keydown(function blueMove(e){
 //declare variables and calculate the center distance and see if there's a collision
       let $redTop=parseInt($redGuy.offset().top);
@@ -210,25 +212,25 @@ $(document).ready(function(){
         $blueGuy.addClass('ballBounceRight');
         setTimeout(function(){
           $blueGuy.removeClass('ballBounceRight');
-          $blueGuy.offset({left:$blueLeft+560,top:$blueTop});
+          $blueGuy.offset({left:$blueLeft+600,top:$blueTop});
         },2000);
       }else if($redLeft>=$blueLeft&&$redTop>=$blueTop-40&&$redTop<$blueTop+40){
         $blueGuy.addClass('ballBounceLeft');
         setTimeout(function(){
           $blueGuy.removeClass('ballBounceLeft');
-          $blueGuy.offset({left:$blueLeft-560,top:$blueTop});
+          $blueGuy.offset({left:$blueLeft-600,top:$blueTop});
         },2000);
       }else if($redTop<$blueTop&&$redLeft>$blueLeft-40&&$redLeft<$blueLeft+40){
         $blueGuy.addClass('ballBounceDown');
         setTimeout(function(){
           $blueGuy.removeClass('ballBounceDown');
-          $blueGuy.offset({left:$blueLeft,top:$blueTop+560});
+          $blueGuy.offset({left:$blueLeft,top:$blueTop+600});
         },2000);
       }else if($redTop>=$blueTop&&$redLeft>=$blueLeft-40&&$redLeft<=$blueLeft+40){
         $blueGuy.addClass('ballBounceUp');
         setTimeout(function(){
           $blueGuy.removeClass('ballBounceUp');
-          $blueGuy.offset({left:$blueLeft,top:$blueTop-560});
+          $blueGuy.offset({left:$blueLeft,top:$blueTop-600});
         },2000);
       }
 
@@ -241,6 +243,7 @@ $(document).ready(function(){
         $blueGuy.parent().append($ball);
         $ball.offset({left:$blueLeft+10,top:$blueTop-20});
         $ball.addClass('ballBounceUp');
+
       }else if(keys.includes(76)&&e.keyCode===77&&$blueCenterDist<5){
         $blueGuy.parent().append($ball);
         $ball.offset({left:$blueLeft+50,top:$blueTop+10});
@@ -259,17 +262,29 @@ $(document).ready(function(){
 //reactions when keys up
     $(document).keyup(function removeKey(e){
       keys.splice(keys.indexOf(e.keyCode),1);
-     if($ball.offset().top<=60){
-      console.log('ha')
-
-     }
 
     })
-
   }
 
+  //Starting from this part is boucing (reverse the rest of the animation?) the
+  //ball at edge and let the goals detect the balls and add scores to scoreboard
+  //accordingly. I worked for a day but still did not figure out why these don't work.
 
-
+    if($ball.position().left<=30&&$ball.position().top>250&&$ball.position().top<500){
+      $('.bluescore').innerHTML('+=1');
+      setTimeout(startGame,2000);
+      setTimeout(function(){
+        $ball.position({top:320,left:500});
+      },5000)
+    }else if($ball.position().left>=970&&$ball.position().top>250&&$ball.position().top<500){
+      $('.redscore').innerHTML('+=1');
+      setTimeout(startGame,2000);
+      setTimeout(function(){
+        $ball.position({top:320,left:500});
+      },5000)
+    }else if($ball.position().top<=10||$ball.position().top>=690||$ball.position().left<=10||$ball.position().left>=990){
+      $ball.css({'animation':'ease-out reverse 2s forwards'});
+     }
 
 
   //give the ball a reaction that it bounces when touching the edge.

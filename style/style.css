@@ -102,68 +102,44 @@
 }
 
 .ballBounceLeft{
-  animation:bounceLeft linear 2s forwards;
+  animation:bounceLeft ease-out 2s forwards;
 }
 @keyframes bounceLeft{
   0%{
     transform:translateX(0px);
-  }
-  30%{
-    transform:translateX(-300px);
-  }
-  80%{
-    transform:translateX(-500px);
   }
   100%{
     transform:translateX(-600px);
   }
 }
 .ballBounceRight{
-  animation:bounceRight linear 2s forwards;
+  animation:bounceRight ease-out 2s forwards;
 }
 @keyframes bounceRight{
   0%{
     transform:translateX(0px);
-  }
-  30%{
-    transform:translateX(+300px);
-  }
-  80%{
-    transform:translateX(+500px);
   }
   100%{
     transform:translateX(+600px);
   }
 }
 .ballBounceUp{
-  animation:bounceUp linear 2s forwards;
+  animation:bounceUp ease-out 2s forwards;
 }
 @keyframes bounceUp{
   0%{
     transform:translateY(0px);
-  }
-  30%{
-    transform:translateY(-300px);
-  }
-  80%{
-    transform:translateY(-500px);
   }
   100%{
     transform:translateY(-600px);
   }
 }
 .ballBounceDown{
-  animation:bounceDown linear 2s forwards;
+  animation:bounceDown ease-out 2s forwards;
 }
 @keyframes bounceDown{
   0%{
     transform:translateY(0px);
-  }
-  30%{
-    transform:translateY(+300px);
-  }
-  80%{
-    transform:translateY(+500px);
   }
   100%{
     transform:translateY(+600px);
