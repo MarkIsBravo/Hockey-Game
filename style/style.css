@@ -27,6 +27,7 @@
   border:5px solid black;
   margin:0 auto;
   position:relative;
+  overflow:hidden;
 }
 .midline{
   height:700px;
@@ -64,11 +65,13 @@
   left:150px;
   top:300px;
   background-color:red;
+  transition:linear;
 }
 #blue{
   left:780px;
   top:300px;
   background-color:blue;
+  transition:linear;
 }
 .goal{
   height:230px;
@@ -95,63 +98,79 @@
   top:320px;
   left:500px;
   background-color:grey;
+  transition:linear;
 }
 
 .ballBounceLeft{
-  animation:bounceLeft 2s 1 linear;
+  animation:bounceLeft linear 2s forwards;
 }
 @keyframes bounceLeft{
   0%{
-    transform:translateX(-50px);
+    transform:translateX(0px);
   }
-  50%{
+  30%{
+    transform:translateX(-300px);
+  }
+  80%{
     transform:translateX(-500px);
   }
   100%{
-    transform:translateX(-400px);
+    transform:translateX(-600px);
   }
 }
 .ballBounceRight{
-  animation:bounceRight 2s 1 linear;
+  animation:bounceRight linear 2s forwards;
 }
 @keyframes bounceRight{
   0%{
-    transform:translateX(+50px);
+    transform:translateX(0px);
   }
-  50%{
+  30%{
+    transform:translateX(+300px);
+  }
+  80%{
     transform:translateX(+500px);
   }
   100%{
-    transform:translateX(+400px);
+    transform:translateX(+600px);
   }
 }
 .ballBounceUp{
-  animation:bounceUp 2s 1 linear;
+  animation:bounceUp linear 2s forwards;
 }
 @keyframes bounceUp{
   0%{
-    transform:translateY(-50px);
+    transform:translateY(0px);
   }
-  50%{
+  30%{
+    transform:translateY(-300px);
+  }
+  80%{
     transform:translateY(-500px);
   }
   100%{
-    transform:translateY(-400px);
+    transform:translateY(-600px);
   }
 }
 .ballBounceDown{
-  animation:bounceDown 2s 1 linear;
+  animation:bounceDown linear 2s forwards;
 }
 @keyframes bounceDown{
   0%{
-    transform:translateY(+50px);
+    transform:translateY(0px);
   }
-  50%{
+  30%{
+    transform:translateY(+300px);
+  }
+  80%{
     transform:translateY(+500px);
   }
   100%{
-    transform:translateY(+400px);
+    transform:translateY(+600px);
   }
+}
+#stage{
+  opacity:1;
 }
 
 
