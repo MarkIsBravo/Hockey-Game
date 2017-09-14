@@ -1,4 +1,4 @@
-# [Rock-Soc]
+# Rock-Soc(This game is still under construction. Will be updated soon.)
 
 ![screenshot](images/Screenshot_Game.png)
 
